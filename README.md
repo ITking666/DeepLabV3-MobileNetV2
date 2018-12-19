@@ -1,2 +1,4 @@
 # DeepLabV3-MobileNetV2
-Semantic Segmentation Software
+Base software for Semantic Segmentation.
+
+Refer to "software_description.pdf" for more details
