@@ -1,0 +1,13 @@
+{
+  "VALIDATION_EXISTS" : true,
+  "TRAIN_TF_RECORD_NAME" : "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/train.record",
+  "VAL_TF_RECORD_NAME" : "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/val.record",
+  "TRAIN_DATA_LIST_NAME" : "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/ImageSets/Segmentation/train.txt",
+  "VAL_DATA_LIST_NAME" : "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/ImageSets/Segmentation/val.txt",
+  "IMAGE_DATA_DIR" : "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/JPEGImages",
+  "LABEL_DATA_DIR" : "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/SegmentationClass",
+  "OUTPUT_HEIGHT" : 202,
+  "OUTPUT_WIDTH" : 308,
+  "LABEL_COLOR_CODED" : true,
+  "IGNORE_LABEL" : 255
+}

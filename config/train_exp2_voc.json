@@ -1,0 +1,39 @@
+{
+  "train_data_file": "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/voc_augmented_train.record",
+  "val_data_file": "/media/kokomind/New Volume/data/VOCdevkit/VOC2012/val.record",
+  "image_size": [202, 308, 3],
+  "shuffle": true,
+  "buffer_size": 4096,
+
+  "aug_delta_brightness": 0.2,
+  "aug_flip_left_right": true,
+  "aug_delta_scale_pad_crop":[0.5, 2.0],
+  "dataset_mean_values": [123.68, 116.779, 103.939],
+
+  "experiment_dir": "./experiments/exp2_16_voc",
+  "max_num_checkpoints": 1,
+  "pretrained_model_dir": "",
+
+  "num_classes": 21,
+  "num_epochs": 400,
+  "batch_size": 16,
+  "output_stride": 16,
+  "width_multiplier": 1.0,
+  "weight_decay": 4e-5,
+  "dropout_keep_prob": 1.0,
+  "enable_batchnorm": true,
+  "batchnorm_decay": 0.9997,
+  "initial_learning_rate": 2e-4,
+  "final_learning_rate":8e-6,
+  "learning_rate_decay_power":0.9,
+  "data_format": "NCHW",
+  "max_num_tensorboard_images": 50,
+  "log_every": 10,
+  "tensorboard_update_every": 100,
+
+  "test_video_file": "/media/kokomind/New Volume/work/mostafa/test_video.mp4",
+  "save_output_video": true,
+  "dump_frames_every": 1,
+  "output_video_file": "/media/kokomind/New Volume/work/mostafa/test_video_output.mp4",
+  "test_model_timestamp_directory": "1539980797"
+}

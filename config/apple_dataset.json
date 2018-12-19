@@ -1,0 +1,13 @@
+{
+  "VALIDATION_EXISTS" : true,
+  "TRAIN_TF_RECORD_NAME" : "D:/AntVision-master/TFRecord_apple/train.record",
+  "VAL_TF_RECORD_NAME" : "D:/AntVision-master/TFRecord_apple/val.record",
+  "TRAIN_DATA_LIST_NAME" : "D:/AntVision-master/dataset/train.txt",
+  "VAL_DATA_LIST_NAME" : "D:/AntVision-master/dataset/val.txt",
+  "IMAGE_DATA_DIR" : "D:/AntVision-master/dataset/images",
+  "LABEL_DATA_DIR" : "D:/AntVision-master/dataset/segmentations",
+  "OUTPUT_HEIGHT" : 202,
+  "OUTPUT_WIDTH" : 308,
+  "LABEL_COLOR_CODED" : true,
+  "IGNORE_LABEL" : 255
+}
