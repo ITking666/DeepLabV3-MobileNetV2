@@ -14,6 +14,7 @@ import imutils
 import cv2
 import numpy as np
 
+
 def fruit_center_size(input, min_distance=4, noise_threshold=100, boxtype='circle'):
 	image = input.copy()
 
@@ -38,6 +39,7 @@ def fruit_center_size(input, min_distance=4, noise_threshold=100, boxtype='circl
 	labels = watershed(-D, markers, mask=thresh)
 
 	centers = []
+	radius = []
 	fruitsizes = []
 	circles = []
 	rects = []
@@ -102,9 +104,10 @@ def fruit_center_size(input, min_distance=4, noise_threshold=100, boxtype='circl
 			x = circle[0][0]
 			y = circle[0][1]
 			r = circle[1]
+			radius.append(r)
 			cv2.circle(image, (int(x), int(y)), int(r), (0, 255, 0), 1)
-			cv2.putText(image, "#{}".format(i + 1), (int(x) - 10, int(y)),
-						cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1)
+			cv2.putText(image, "#{}".format(i + 1), (int(x) - 10, int(y) - 10),
+						cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
 			centers.append((x, y))
 			fruitsizes.append(np.pi * r * r)
 			i = i + 1
@@ -115,11 +118,12 @@ def fruit_center_size(input, min_distance=4, noise_threshold=100, boxtype='circl
 			box = cv2.boxPoints(rect)
 			box = np.int0(box)
 			centers.append(rect[0])
+			radius.append(np.sqrt(rect[1][0]**2 + rect[1][1]**2)/2)
 			fruitsizes.append(rect[1][0] * rect[1][1])
 			cv2.drawContours(image, [box], 0, (0, 255, 0), 1)
 			cv2.putText(image, "#{}".format(i + 1), (int(rect[0][0]) - 10, int(rect[0][1])),
 						cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1)
 			i = i + 1
-	print("[INFO] {} unique segments found".format(i+1))
+	print("[INFO] {} unique segments found".format(i))
 
-	return image, centers, fruitsizes
+	return image, centers, radius, fruitsizes

@@ -32,7 +32,7 @@ def main():
         # Resize to the size provided in the config file
         rgb_input, predictions, predictions_decoded = model.predict(rgb_input)
         # add the watershed algorithm to locate each apple of the frame
-        predictions_decoded, fruit_centers, fruit_size = watershed.fruit_center_size(predictions_decoded)
+        predictions_decoded, fruit_centers, radius, fruit_size = watershed.fruit_center_size(predictions_decoded)
         print(fruit_centers)
         print(fruit_size)
         # Fast hack as stated before. Add both images to the width axis.
